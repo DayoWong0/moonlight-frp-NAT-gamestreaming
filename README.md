@@ -8,3 +8,10 @@
  ## 导入官方的项目
  - 下载android studio 4.0 然后git clone项目,android studio就自己下载开发环境了
 参考官方README.md
+
+## 测试各个端口的作用
+- 1.修改app/src/main/java/com/limelight/nvstream/http/NvHTTP.java
+```java
+public static final int HTTP_PORT = 47989;
+```
+数字改为0,看看效果
