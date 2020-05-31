@@ -3,5 +3,5 @@
 ##  参考
 - [frps一键安装脚本](https://github.com/MvsCode/frps-onekey)
 - [Moonlight-Android官方版本](https://github.com/moonlight-stream/moonlight-android)
-- [Moonlight本人修改版](https://github.com/chengziqaq/moonlight-android)
+- [Moonlight-Android本人修改版](https://github.com/chengziqaq/moonlight-android)
 - [导入别人的Android studio项目]()
