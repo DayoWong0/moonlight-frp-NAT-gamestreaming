@@ -6,3 +6,4 @@
 - [Moonlight-Android本人修改版](https://github.com/chengziqaq/moonlight-android)
 - [导入别人的Android studio项目]()
  ## 导入官方的项目
+ - 下载android studio 4.0 然后git clone项目,android studio就自己下载开发环境了
