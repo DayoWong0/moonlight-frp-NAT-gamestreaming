@@ -9,6 +9,16 @@
  - 下载android studio 4.0 然后git clone项目,android studio就自己下载开发环境了
 参考官方README.md
 
+端口占用查看
+```python
+import time
+import os
+while(1):
+        os.system("netstat -nltp | grep 12023")
+        time.sleep(1)
+        os.system("clear")
+```
+
 ## 测试各个端口的作用
 - 1.修改app/src/main/java/com/limelight/nvstream/http/NvHTTP.java
 ```java
