@@ -3,17 +3,8 @@ frp--内网穿透 Moonlight远程游戏串流 NAT大宽带
 ##  参考
 - [frps一键安装脚本](https://github.com/MvsCode/frps-onekey)
 - [moonlight-Android官方版本](https://github.com/moonlight-stream/moonlight-android)
- ## 导入官方的项目--开发环境和官方一致
- [参考官方README](https://github.com/moonlight-stream/moonlight-android)  
- 当前版本:v9.5.1
- # Building
-- Install Android Studio and the Android NDK
-- Run ‘git submodule update --init --recursive’ from within moonlight-android/
-- In moonlight-android/, create a file called ‘local.properties’. Add an ‘ndk.dir=’ property to the local.properties file and set it equal to your NDK directory.
-- Build the APK using Android Studio or gradle
- 
- - 下载android studio 4.0 然后Get from version control,android studio就自己下载并配置好开发环境了(可能需要手动下载NDK)
- 
+
+
  # frps安装--NAT主机上的操作  
 [frp安装一键脚本](https://github.com/MvsCode/frps-onekey),这里我们选用国内NAT主机  
 所以用
@@ -93,7 +84,18 @@ local_port = 48010
 remote_port = 40003
  ```
  
-## 修改端口
+  ## 导入官方的项目--开发环境和官方一致
+ [参考官方README](https://github.com/moonlight-stream/moonlight-android)  
+ 当前版本:v9.5.1
+ # Building
+- Install Android Studio and the Android NDK
+- Run ‘git submodule update --init --recursive’ from within moonlight-android/
+- In moonlight-android/, create a file called ‘local.properties’. Add an ‘ndk.dir=’ property to the local.properties file and set it equal to your NDK directory.
+- Build the APK using Android Studio or gradle
+ 
+ - 下载android studio 4.0 然后Get from version control,android studio就自己下载并配置好开发环境了(可能需要手动下载NDK)
+ 
+## 修改端口--以下操作在android studio中进行
 源码修改端口的位置  
 ### java代码中的修改
 - 1.新建文件,方便以后只需要在这个文件里修改端口
