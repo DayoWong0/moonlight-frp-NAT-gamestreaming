@@ -49,3 +49,10 @@ frpc.ini中的local_port不能修改
 - 连上手机,打开USB调试模式,运行      
 - moonlight客户端里输入frps的IP地址即可    
 
+### 参考
+- [frp](https://github.com/fatedier/frp)  
+- [Frps服务端一键配置脚本](https://github.com/MvsCode/frps-onekey)  
+- [moonlight-android](https://github.com/moonlight-stream/moonlight-android)  
+- [moonlight-common-c](https://github.com/moonlight-stream/moonlight-common-c)  
+
+
