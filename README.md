@@ -85,7 +85,7 @@ remote_port = 40003
 ## 修改端口
 源码修改端口的位置  
 ### java代码中的修改
-### 新建文件,方便以后只需要在这个文件里修改端口
+- 1.新建文件,方便以后只需要在这个文件里修改端口
 文件路径和名称:src/main/java/com/limelight/preferences/CustomizePort.java  
 粘贴下面的代码  
 ```java
@@ -108,5 +108,54 @@ public class CustomizePort {
     public static int udp_48002 = 48002  
 这个端口以前有,不记得哪个版本开始被移除了,保持原样就好,改不改不影响.  
 
+以下的修改都可以复制粘贴  
+- 2.找到src/main/java/com/limelight/nvstream/http/NvHTTP.java
+```java
+public static final int HTTPS_PORT = 47984;  
+```
+将47984改为CustomizePort.tcp_47984
+```java
+public static final int HTTPS_PORT = CustomizePort.tcp_47984;  
 
+```
+将
+```java
+public static final int HTTP_PORT = 47989;
+```
+改为
+```java
+public static final int HTTP_PORT = CustomizePort.tcp_47989;
+```  
+
+打开src/main/java/com/limelight/nvstream/wol/WakeOnLanSender.java  
+将
+```java
+    private static final int[] PORTS_TO_TRY = new int[] {
+        7, 9, // Standard WOL ports
+        47998, 47999, 48000, 48002, 48010 // Ports opened by GFE
+    };
+```
+改为:
+```java
+    private static final int[] PORTS_TO_TRY = new int[] {
+        7, 9, // Standard WOL ports //48010_tcp not controled at here
+            CustomizePort.udp_47998, CustomizePort.udp_47999,
+            CustomizePort.udp_48000, CustomizePort.udp_48002,
+            CustomizePort.udp_48010 // Ports opened by GFE
+    };
+```
+
+###　Ｃ语言代码中的修改
+在目录：src/main/jni/moonlight-core/moonlight-common-c/src下新建文件　　　　
+CustomizePort.h　　
+粘贴以下内容　　
+```C
+#define tcp_48010 30002
+#define udp_47998 40000
+#define udp_47999 40001
+#define udp_48000 40002
+#define udp_48010 40003
+```
+将3000 40001等修改为前面你自定义的端口  
+- 
    	
