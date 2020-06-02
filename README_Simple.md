@@ -15,7 +15,7 @@
 - fork [官方项目](https://github.com/moonlight-stream/moonlight-android)到自己仓库  
 - git clone到本地  
 android studio会自动下载配置好环境      
-#### 下载本仓库解压复制code文件夹下的文件到android项目对应位置
+#### 下载本仓库解压复制(覆盖原文件)code文件夹下的文件到android项目对应位置
 - java文件    
 src/main/java/com/limelight/preferences/CustomizePort.java      
 src/main/java/com/limelight/nvstream/http/NvHTTP.java      
@@ -33,14 +33,14 @@ local_ip = 127.0.0.1
 local_port = 47984
 remote_port = 30000
 ```
-配置解读为:协议类型TCP 本地端口47984 远程端口30000  
-则CustomizePort.java中对应改为  
-public static int tcp_47984 = 30000;  
+配置解读为:协议类型TCP 本地端口47984 远程端口30000    
+则CustomizePort.java中对应改为     
+public static int tcp_47984 = 30000;     
 即    
-public static int 协议类型_本地端口号 = 远程端口号;  
-CustomizePort.h中     
-#define 协议类型_本地端口号 远程端口号   
-注:你需要修改的是frpc.ini中的remote_port,然后java和c代码中的对应修改就行了,frpc.ini中的local_port不能修改    
+public static int 协议类型_本地端口号 = 远程端口号;    
+CustomizePort.h中      
+#define 协议类型_本地端口号 远程端口号     
+注:你需要修改的是frpc.ini中的remote_port,然后java和c代码中的对应修改就行了,frpc.ini中的local_port不能修改      
 ## 测试运行    
 - 运行frpc  
 这里有个bat脚本,可直接运行,[下载]()后放在frpc同目录下  
