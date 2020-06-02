@@ -4,7 +4,8 @@ frp--内网穿透 Moonlight远程游戏串流 NAT大宽带
 - [frps一键安装脚本](https://github.com/MvsCode/frps-onekey)
 - [moonlight-Android官方版本](https://github.com/moonlight-stream/moonlight-android)
 
-
+# NAT主机端口映射
+待补充
  # frps安装--NAT主机上的操作  
 [frp安装一键脚本](https://github.com/MvsCode/frps-onekey),这里我们选用国内NAT主机  
 所以用
@@ -14,10 +15,30 @@ chmod 700 ./install-frps.sh
 ./install-frps.sh install
 ```
 一键脚本需要注意的地方:
+- frp下载镜像:国内选阿里云
 - frps端口号:要你的NAT机器能用的端口
 - token,ip,port保存下来 等会要用,其他默认即可
 
-复制frps配置信息,ip port token下面会用到
+复制frps配置信息,ip port token下面会用到,其他的不用管
+```
+============== Check your input ==============
+You Server IP      : 你的主机ip
+Bind port          : 你选择的端口号
+kcp support        : true
+vhost http port    : 80
+vhost https port   : 443
+Dashboard port     : 6443
+Dashboard user     : admin
+Dashboard password : C4yqSsaX
+token              : 你的token
+subdomain_host     : 你的主机ip
+tcp_mux            : true
+Max Pool count     : 50
+Log level          : info
+Log max days       : 3
+Log file           : enable
+==============================================
+```
  
  # [参考wiki需要开放的端口以及协议](https://github.com/moonlight-stream/moonlight-docs/wiki/Setup-Guide#manual-port-forwarding-advanced)
  
@@ -83,6 +104,7 @@ local_ip = 127.0.0.1
 local_port = 48010
 remote_port = 40003
  ```
+ 测试下frpc是否能正常连接frps
  
   ## 导入官方的项目--开发环境和官方一致
  [参考官方README](https://github.com/moonlight-stream/moonlight-android)  
