@@ -15,7 +15,18 @@ frp--内网穿透 Moonlight远程游戏串流 NAT大宽带
  - 下载android studio 4.0 然后Get from version control,android studio就自己下载并配置好开发环境了(可能需要手动下载NDK)
  
  # frps安装--NAT主机上的操作  
- 复制frps配置信息,主机ip port token下面会用到
+[frp安装一键脚本](https://github.com/MvsCode/frps-onekey),这里我们选用国内NAT主机  
+所以用
+```shell
+wget https://code.aliyun.com/MvsCode/frps-onekey/raw/master/install-frps.sh -O ./install-frps.sh
+chmod 700 ./install-frps.sh
+./install-frps.sh install
+```
+一键脚本需要注意的地方:
+- frps端口号:要你的NAT机器能用的端口
+- token,ip,port保存下来 等会要用,其他默认即可
+
+复制frps配置信息,ip port token下面会用到
  
  # [参考wiki需要开放的端口以及协议](https://github.com/moonlight-stream/moonlight-docs/wiki/Setup-Guide#manual-port-forwarding-advanced)
  
