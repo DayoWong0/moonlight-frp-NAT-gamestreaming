@@ -15,7 +15,7 @@
 - fork [官方项目](https://github.com/moonlight-stream/moonlight-android)到自己仓库
 - git clone到本地
 android studio会自动下载配置好环境    
-#### 下载本仓库解压复制code文件夹下的文件到android项目对应位置
+#### 下载本仓库解压复制(覆盖原文件)code文件夹下的文件到android项目对应位置
 - java文件  
 src/main/java/com/limelight/preferences/CustomizePort.java    
 src/main/java/com/limelight/nvstream/http/NvHTTP.java    
