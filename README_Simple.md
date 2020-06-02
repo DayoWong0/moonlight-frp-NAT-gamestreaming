@@ -40,15 +40,18 @@ public static int tcp_47984 = 30000;
 public static int 协议类型_本地端口号 = 远程端口号;    
 CustomizePort.h中      
 #define 协议类型_本地端口号 远程端口号     
-注:你需要修改的是frpc.ini中的remote_port  
+注:你需要修改的是frpc.ini中的remote_port,local_port不能修改  
 java和c代码中的只需要修改代码最右边的端口号,  
-frpc.ini中的local_port不能修改      
 ## 测试运行    
 - 运行frpc    
 这里有个bat脚本,可直接运行,[下载](https://github.com/chengziqaq/moonlight-frp-NAT-gamestreaming/raw/master/frp/frpc.bat)后放在frpc同目录下   
 - 连上手机,打开USB调试模式,运行      
 - moonlight客户端里输入frps的IP地址即可    
-
+### 环境
+- Android Studio 4.0 
+- ndk 21.0.6113669
+- [moonlight-android](https://github.com/moonlight-stream/moonlight-android/tree/581327dc8e331b50ca644936b1225dbf24b04c0c)
+- [moonlight-common-c](https://github.com/moonlight-stream/moonlight-common-c/tree/bea625a13dd4f9604e5583744cf7c8e36064f19d)
 ### 参考
 - [frp](https://github.com/fatedier/frp)  
 - [Frps服务端一键配置脚本](https://github.com/MvsCode/frps-onekey)  
