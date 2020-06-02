@@ -1,26 +1,112 @@
-# frp-Moonlight-Docker-NAT
+# moonlight-frp-NAT-gamestreaming
 frp--内网穿透 Moonlight远程游戏串流 NAT大宽带
 ##  参考
 - [frps一键安装脚本](https://github.com/MvsCode/frps-onekey)
 - [moonlight-Android官方版本](https://github.com/moonlight-stream/moonlight-android)
  ## 导入官方的项目--开发环境和官方一致
- - 下载android studio 4.0() 然后git clone项目,android studio就自己下载开发环境了
-参考官方README.md
+ [参考官方README](https://github.com/moonlight-stream/moonlight-android)  
+ 当前版本:v9.5.1
+ # Building
+- Install Android Studio and the Android NDK
+- Run ‘git submodule update --init --recursive’ from within moonlight-android/
+- In moonlight-android/, create a file called ‘local.properties’. Add an ‘ndk.dir=’ property to the local.properties file and set it equal to your NDK directory.
+- Build the APK using Android Studio or gradle
+ 
+ - 下载android studio 4.0 然后Get from version control,android studio就自己下载并配置好开发环境了(可能需要手动下载NDK)
+ 
+ # frps安装--NAT主机上的操作  
+ 复制frps配置信息,主机ip port token下面会用到
+ 
+ # [参考wiki需要开放的端口以及协议](https://github.com/moonlight-stream/moonlight-docs/wiki/Setup-Guide#manual-port-forwarding-advanced)
+ 
+ # frpc映射--本地电脑的操作
+ 假设NAT主机端口可以使用:  
+ - TCP:30000,30001,30002,
+ - UDP:40000,40001,40002,40003
+ 查询上面的官方wiki需要开放的端口为:  
+- TCP 47984, 47989, 48010
+- UDP 47998, 47999, 48000, 48010
+假设对应端口一一对应
+对应的映射关系为:  
+本地电脑(local_port)    frps服务器/NAT主机(remote_port)  
+     30000                 47984    
+     30001                 47989  
+ 以此类推
+ 则frp配置文件为:  
+ ```
+ [common]
+server_addr = frp服务器ip
+server_port = frp服务器端口
+token = frp验证token
 
-端口占用查看
-```python
-import time
-import os
-while(1):
-        os.system("netstat -nltp | grep 12023")
-        time.sleep(1)
-        os.system("clear")
-```
+[nvidia-stream-tcp-1]
+type = tcp
+local_ip = 127.0.0.1
+local_port = 47984
+remote_port = 30000
 
-## 测试各个端口的作用
-- 1.修改app/src/main/java/com/limelight/nvstream/http/NvHTTP.java
+[nvidia-stream-tcp-2]
+type = tcp
+local_ip = 127.0.0.1
+local_port = 47989
+remote_port = 30001
+
+[nvidia-stream-tcp-3]
+type = tcp
+local_ip = 127.0.0.1
+local_port = 48010
+remote_port = 30002
+
+[nvidia-stream-udp-1]
+type = udp
+local_ip = 127.0.0.1
+local_port = 47998
+remote_port = 40000
+
+[nvidia-stream-udp-2]
+type = udp
+local_ip = 127.0.0.1
+local_port = 47999
+remote_port = 40001
+
+[nvidia-stream-udp-3]
+type = udp
+local_ip = 127.0.0.1
+local_port = 48000
+remote_port = 40002
+
+[nvidia-stream-udp-4]
+type = udp
+local_ip = 127.0.0.1
+local_port = 48010
+remote_port = 40003
+ ```
+ 
+## 修改端口
+源码修改端口的位置
+### java代码中的修改
+### 新建文件,方便以后只需要在这个文件里修改端口:
+文件路径和名称:src/main/java/com/limelight/preferences/CustomizePort.java  
+粘贴下面的代码  
 ```java
-public static final int HTTP_PORT = 47989;
-```
-47989 --> 0
+package com.limelight.preferences;
 
+public class CustomizePort {
+    public static int tcp_47984 = 30000;
+    public static int tcp_47989 = 30001;
+    //远程唤醒端口 默认的7和9就硬编码了
+    public static int udp_47998 = 40000;
+    public static int udp_47999 = 40001;
+    public static int udp_48000 = 40002;
+    public static int udp_48010 = 40003;
+    public static int udp_48002 = 48002
+    
+}
+```
+对应修改就ok了,依然是上面的映射关系.  
+有没有注意到,多了一条  
+    public static int udp_48002 = 48002  
+这个端口以前有,不记得哪个版本开始被移除了,保持原样就好,改不改不影响.
+
+
+   	
