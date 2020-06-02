@@ -145,7 +145,7 @@ public static final int HTTP_PORT = CustomizePort.tcp_47989;
     };
 ```
 
-###　Ｃ语言代码中的修改
+### Ｃ语言代码中的修改
 在目录：src/main/jni/moonlight-core/moonlight-common-c/src下新建文件　　　　
 CustomizePort.h　　
 粘贴以下内容　　
@@ -157,5 +157,70 @@ CustomizePort.h　　
 #define udp_48010 40003
 ```
 将3000 40001等修改为前面你自定义的端口  
+#### 打开RtspConnection.c
+在第一行加入(以下的对C文件的操作都要加)
+```C
+#include "CustomizePort.h"
+```
 - 
-   	
+ctrl + f 搜索48010  
+将搜到的除了下面语句中的48010替换为tcp_48010
+```java
+Limelog("RTSP: Failed to connect to UDP port 48010\n");
+```
+把上面这一句改为
+```c
+Limelog("RTSP: Failed to connect to UDP port %d\n", udp_48010);
+```
+### 打开VideoStream.c
+第一行粘贴头文件
+```C
+#include "CustomizePort.h"
+```
+将  
+```C
+#define RTP_PORT 47998
+```
+注释掉
+粘贴以下代码  
+```C
+static  int RTP_PORT = udp_47998;
+```
+打开SdpGenerator.c  
+搜索47998
+将
+```c
+AppVersionQuad[0] < 4 ? 47996 : 47998);
+```
+改为  
+```c
+AppVersionQuad[0] < 4 ? 47996 : udp_47998);//修改47998-udp
+```
+打开ControlStream.c  
+搜索47999   
+```c
+enet_address_set_port(&address, 47999);
+```
+改为
+```c
+enet_address_set_port(&address, udp_47999);
+```
+将  
+```c
+Limelog("Failed to connect to UDP port 47999\n");
+```
+改为    
+```c
+Limelog("Failed to connect to UDP port %d\n",udp_47999);
+```
+打开src/main/jni/moonlight-core/moonlight-common-c/src/AudioStream.c  
+加入头文件,将  
+```c
+#define RTP_PORT 48000
+```
+注释掉
+粘贴下面的代码
+```c
+static int RTP_PORT = udp_48000;
+```
+
