@@ -223,7 +223,7 @@ Limelog("Failed to connect to UDP port %d\n",udp_47999);
 ```c
 static int RTP_PORT = udp_48000;
 ```
-## 可以测试运行了
-手动输入NAT主机ip地址  
-弱以上操作没问题,就可以正常串流了
+## 测试运行
+手动输入NAT主机ip地址    
+如以上操作没问题,就可以正常串流了   
 
