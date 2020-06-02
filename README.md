@@ -224,6 +224,7 @@ Limelog("Failed to connect to UDP port %d\n",udp_47999);
 static int RTP_PORT = udp_48000;
 ```
 ## 测试运行
+运行frpc  
 手动输入NAT主机ip地址    
 如以上操作没问题,就可以正常串流了   
 
