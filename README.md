@@ -52,10 +52,13 @@ java和c代码中的只需要修改代码最右边的端口号
 - ndk 21.0.6113669
 - [moonlight-android](https://github.com/moonlight-stream/moonlight-android/tree/581327dc8e331b50ca644936b1225dbf24b04c0c)
 - [moonlight-common-c](https://github.com/moonlight-stream/moonlight-common-c/tree/bea625a13dd4f9604e5583744cf7c8e36064f19d)
+### 注意事项
+- 关闭手机代理软件
+- 确认远程端口正确开放
+
 ### 参考
 - [frp](https://github.com/fatedier/frp)  
 - [Frps服务端一键配置脚本](https://github.com/MvsCode/frps-onekey)  
 - [moonlight-android](https://github.com/moonlight-stream/moonlight-android)  
 - [moonlight-common-c](https://github.com/moonlight-stream/moonlight-common-c)  
-
 
