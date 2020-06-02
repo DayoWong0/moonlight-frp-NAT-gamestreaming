@@ -42,8 +42,8 @@ CustomizePort.h中
 #define 协议类型_本地端口号 远程端口号     
 注:你需要修改的是frpc.ini中的remote_port,然后java和c代码中的对应修改就行了,frpc.ini中的local_port不能修改      
 ## 测试运行    
-- 运行frpc  
-这里有个bat脚本,可直接运行,[下载]()后放在frpc同目录下  
-- 连上手机,打开USB调试模式,运行    
-- moonlight客户端里输入frps的IP地址即可  
+- 运行frpc    
+这里有个bat脚本,可直接运行,[下载]()后放在frpc同目录下    
+- 连上手机,打开USB调试模式,运行      
+- moonlight客户端里输入frps的IP地址即可    
 
