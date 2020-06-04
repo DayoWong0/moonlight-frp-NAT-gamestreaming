@@ -1,7 +1,7 @@
 # 操作方法
 ## NAT主机端口映射
-- TCP端口:共4个.一个frps端口,三个GFE Experience需要的端口(可自行添加一个3306远程桌面映射)  
-- UDP端口:共4个 都是GEF Expertise用的端口  
+- TCP端口:共4个.一个frps端口,三个GFE需要的端口(可自行添加一个3306远程桌面映射)  
+- UDP端口:共4个 都是GEF用的端口  
 至少需要8个端口  
 ## [frps安装](https://github.com/MvsCode/frps-onekey)
 记录ip 端口 token 下面要用  
