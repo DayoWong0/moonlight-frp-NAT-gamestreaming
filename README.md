@@ -9,7 +9,7 @@
 - 下载[frp-win-amd64](https://github.com/fatedier/frp/releases)  
 - 下载frpc.ini[模板](https://raw.githubusercontent.com/chengziqaq/moonlight-frp-NAT-gamestreaming/master/frp/frpc.ini)    
 修改服务器配置,填入三个服务器参数,修改remote_port  
-## 用android studio导入项目  
+## 用android studio导入项目--参考moonlight-android README  
 - android官网下载android studio,NDK,因为核心是用C语言写的  
 - 下载git  
 - fork [官方项目](https://github.com/moonlight-stream/moonlight-android)到自己仓库  
@@ -48,22 +48,25 @@ java和c代码中的只需要修改代码最右边的端口号
 有个bat脚本,[下载](https://github.com/chengziqaq/moonlight-frp-NAT-gamestreaming/raw/master/frp/frpc.bat)后放在frpc同目录下   
 - 连上手机,打开USB调试模式,运行      
 - moonlight客户端里输入frps的IP地址即可    
-### 环境
+### 环境--参考moonlight-android README
 - Android Studio 4.0 
 - ndk 21.0.6113669
-- [moonlight-android](https://github.com/moonlight-stream/moonlight-android/tree/581327dc8e331b50ca644936b1225dbf24b04c0c)
-当前版本v9.5.1 
-本文编辑时间6月2号左右
+- [moonlight-android](https://github.com/moonlight-stream/moonlight-android/tree/581327dc8e331b50ca644936b1225dbf24b04c0c) 当前版本v9.5.1   
+本文编辑时间6月2号左右  
 - [moonlight-common-c](https://github.com/moonlight-stream/moonlight-common-c/tree/bea625a13dd4f9604e5583744cf7c8e36064f19d)
 ### 注意事项
 - 关闭手机代理软件
 - 确认远程端口正确开放
-- 其他串流问题可参考Moonlight官方文档
+阿里云 腾讯云管理页面还有防火墙设置 未正确开启不能正常使用  
+- 建议使用国内NAT主机   
+优势:带宽大 价格便宜   
+缺点:带宽共享 主机商要求不能长时间占用带宽  
+- 其他串流问题可参考[moonlight-doc-wiki](https://github.com/moonlight-stream/moonlight-docs/wiki)
 ### 遇到的问题
 - 测试串流GTA5 刚开始串流电脑就黑屏了 手机也没有画面
 重启后,开机时转完windows图标就黑屏了,过一会再次重启,重启两次就进入windows的系统修复了.  
 进BIOS设置核显为第一显卡,可以进入系统,顺手把独显驱动和GTA5卸载了,GTA5可能也有问题,在steam下载后,gta5不能直接启动,校验了文件后才正常启动,并且GEF Experience不能主动扫描到这游戏(以前都可以的)   
-可能是显卡供电不足,之前我安装黑苹果,把显卡的供电线拔过.可能重新插上后接触不良,串流游戏时显卡占用率比平时高,所以这个推测比较合理.    
+可能是显卡供电不足,之前我安装黑苹果,把显卡的供电线拔过.可能重新插上后接触不良,串流游戏时显卡占用率比平时高  
 
 
 
