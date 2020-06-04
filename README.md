@@ -69,9 +69,11 @@ java和c代码中的只需要修改代码最右边的端口号
 可能是显卡供电不足,之前我安装黑苹果,把显卡的供电线拔过.可能重新插上后接触不良,串流游戏时显卡占用率比平时高  
 
 
-
 ### 参考
 - [frp](https://github.com/fatedier/frp)  
 - [Frps服务端一键配置脚本](https://github.com/MvsCode/frps-onekey)  
 - [moonlight-android](https://github.com/moonlight-stream/moonlight-android)  
 - [moonlight-common-c](https://github.com/moonlight-stream/moonlight-common-c)  
+### 其他方法
+- 使用Openvpn代替上面的所有操作   
+我测试过 在手机上能成功连上服务器 在电脑上连接提示 tls shake hands 出错 暂时没找到解决办法   
