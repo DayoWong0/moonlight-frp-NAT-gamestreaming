@@ -16,7 +16,7 @@
 - git clone到本地  
 android studio会自动下载配置好环境      
 #### 下载本仓库解压复制(覆盖原文件)code文件夹下的文件到android项目对应位置
-[~~这里有啰嗦版本,可以看到哪些地方需要修改,没多大用处 --~~](https://github.com/chengziqaq/moonlight-frp-NAT-gamestreaming/blob/master/README-old.md#%E4%BF%AE%E6%94%B9%E7%AB%AF%E5%8F%A3--%E4%BB%A5%E4%B8%8B%E6%93%8D%E4%BD%9C%E5%9C%A8android-studio%E4%B8%AD%E8%BF%9B%E8%A1%8C)
+[~~这里有啰嗦版本,可以看到哪些地方需要修改,比较麻烦~~](https://github.com/chengziqaq/moonlight-frp-NAT-gamestreaming/blob/master/README-old.md#%E4%BF%AE%E6%94%B9%E7%AB%AF%E5%8F%A3--%E4%BB%A5%E4%B8%8B%E6%93%8D%E4%BD%9C%E5%9C%A8android-studio%E4%B8%AD%E8%BF%9B%E8%A1%8C)
 - java文件    
 src/main/java/com/limelight/preferences/CustomizePort.java      
 src/main/java/com/limelight/nvstream/http/NvHTTP.java      
@@ -52,6 +52,8 @@ java和c代码中的只需要修改代码最右边的端口号
 - Android Studio 4.0 
 - ndk 21.0.6113669
 - [moonlight-android](https://github.com/moonlight-stream/moonlight-android/tree/581327dc8e331b50ca644936b1225dbf24b04c0c)
+当前版本v9.5.1 
+本文编辑时间6月2号左右
 - [moonlight-common-c](https://github.com/moonlight-stream/moonlight-common-c/tree/bea625a13dd4f9604e5583744cf7c8e36064f19d)
 ### 注意事项
 - 关闭手机代理软件
