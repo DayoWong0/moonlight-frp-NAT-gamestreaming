@@ -4,4 +4,6 @@
 - 估计是台式电脑的问题
 ## openvpn和ssr
 - openvpn位于数据链路层还是网络层? ssr位于运输层 openvpn才能实现全局代理,ssr不能
+## 配置信息
+tcp 1194端口
 ## [下载地址](https://openvpn.net/client-connect-vpn-for-windows/)
